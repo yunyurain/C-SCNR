@@ -13,6 +13,8 @@ predict <- function(mean_mat, sd_mat, mean_coef, sd_coef) {
   ))
 }
 
+## 2*6 Interaction implemented in the study
+## Base groups can be defined by the user given the available covariates
 get_base_groups <- function(df) {
   df %>%
     mutate(

@@ -3,7 +3,7 @@ library(data.table)
 library(parallel)
 
 for (h2 in c(0.5)) {
-for (causal in c(0.1,0.5)) {
+for (causal in c(0.01,0.1,0.5)) {
 for (rep in 1:10) {
   for (k in 1:5) {
     ss <- fread(paste0("sumstat/h2_",h2,"_poly_",causal,"_rep_",rep,"_subset_",k,"_removed.PHENO.glm.linear"))
@@ -20,8 +20,7 @@ for (rep in 1:10) {
     out <- lassosum.pipeline(cor=cor, chr=ss$`#CHROM`, pos=ss$POS, 
                              A1=ss$ALT, A2=ss$REF, 
                              ref.bfile=ref.bfile, test.bfile=test.bfile, 
-                             LDblocks = LDblocks, cluster = cl,
-                             s = c(0.9,1))
+                             LDblocks = LDblocks, cluster = cl)
     stopCluster(cl)
     
     test_pheno = fread(paste0("simulated_data/", "h2_", h2, "_poly_", causal, "_rep_", rep, "_subset_",k,"_cont_pheno.txt"))

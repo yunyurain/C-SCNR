@@ -9,6 +9,7 @@ predict <- function(mean_mat, sd_mat, mean_coef, sd_coef) {
   ))
 }
 
+## Specify alpha
 conf_level = 0.95
 alpha = 1 - conf_level
 

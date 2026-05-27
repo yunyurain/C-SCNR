@@ -2,7 +2,7 @@
 
 Dir=/home/r9user7/Documents/PRS/Simulation_CV+_Split_Conformal
 
-for causal in {0.1,0.5}; do
+for causal in {0.01,0.1,0.5}; do
 for rep in {1..10}; do
 for k in {1..5}; do
 

@@ -11,7 +11,8 @@ predict <- function(mean_mat, sd_mat, mean_coef, sd_coef) {
   ))
 }
 
-## Scenario 1
+## Simulation Study IV (Scenario 1)
+## Base groups can be flexibly defined by the user given the available covariates
 get_base_groups <- function(df) {
   df %>%
     mutate(

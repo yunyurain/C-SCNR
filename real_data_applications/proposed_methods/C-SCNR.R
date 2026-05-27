@@ -26,9 +26,14 @@ get_base_groups <- function(df) {
     )
 }
 
+## Specify miscoverage level alpha
 conf_level = 0.95
 alpha = 1 - conf_level
 
+## Specify number of iterations L
+L = 20
+
+## Five independent trials on the trait
 for (i in 1:5) {
   ## Calibration data
   k = 5
@@ -67,7 +72,7 @@ for (i in 1:5) {
   
   cat("done.","\n")
   
-  #### Studentized Residuals on Calibration data
+  #### Normalized Residuals on Calibration data
   calib.pheno = fread(paste0(path0,"/training_test_HDL_covar/training_",i,"/training_pheno_subset_",k,".txt"), header = T)
   calib.covar = fread(paste0(path0,"/training_test_HDL_covar/training_",i,"/training_covar_subset_",k,".txt"), header = T)
   calib.pgs = fread(paste0(path0,"/PGS/training/PGS_training_",i,"_subset_",k,".profile"), header = T)
@@ -85,7 +90,7 @@ for (i in 1:5) {
   pred.cal <- predict(mean_mat=mean_mat_cal, sd_mat=sd_mat_cal, mean_coef=as.numeric(fit$coefficients), sd_coef=as.numeric(fit2$coefficients))
   calib.data$R_i = abs(calib.data$HDL - pred.cal$mean) / pred.cal$sd
   
-  for (rep in 1:20) {
+  for (rep in 1:L) {
   #### Clustering on Calibration data
   ## Base Groups  
   calib.data = get_base_groups(calib.data)

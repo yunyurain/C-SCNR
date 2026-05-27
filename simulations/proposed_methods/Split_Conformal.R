@@ -1,5 +1,6 @@
 library(data.table)
 
+## Specify miscoverage level alpha
 conf_level = 0.95
 alpha = 1 - conf_level
 

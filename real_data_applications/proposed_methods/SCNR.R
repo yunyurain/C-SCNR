@@ -10,9 +10,11 @@ predict <- function(mean_mat, sd_mat, mean_coef, sd_coef) {
   ))
 }
 
+## Specify miscoverage level alpha
 conf_level = 0.95
 alpha = 1 - conf_level
 
+## Five independent trials on the trait
 for (i in 1:5) {
   ## Calibration data
   k = 5

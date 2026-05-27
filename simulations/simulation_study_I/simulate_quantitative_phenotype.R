@@ -3,7 +3,7 @@ path = "/home/r9user7/Documents/PRS/Simulation_CV+_Split_Conformal"
 
 ## set parameters
 for (h2 in c(0.5)) {
-  for (causal in c(0.1,0.5)) {
+  for (causal in c(0.01,0.1,0.5)) {
       for (rep in 1:10) {
         ## get dimensions
         geno_bim = fread("UKBB_individuals/individuals.chr1.bim", header = F)

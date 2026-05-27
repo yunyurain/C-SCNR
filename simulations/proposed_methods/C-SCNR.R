@@ -21,9 +21,11 @@ get_base_groups <- function(df) {
     )
 }
 
+## Specify miscoverage level alpha
 conf_level = 0.95
 alpha = 1 - conf_level
 
+## Specify number of iterations L
 L = 20
 
 for (rep in 1:20) {
@@ -47,7 +49,7 @@ for (rep in 1:20) {
   
   cat("done.","\n")
   
-  #### Studentized Residuals on Calibration data
+  #### Normalized Residuals on Calibration data
   calib.pheno = fread(paste0("simulated_data/rep_", rep, "_subset_", k, "_cont_pheno.txt"),header=T)
   calib.covar = fread(paste0("UKBB_individuals/covar/covar_subset_",k,".txt"),header = T)
 

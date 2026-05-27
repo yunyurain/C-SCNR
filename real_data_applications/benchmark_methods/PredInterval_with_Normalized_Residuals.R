@@ -14,7 +14,7 @@ conf_level = 0.95
 alpha = 1 - conf_level
 
 for (i in 1:5) {
-  ## CV to obtain studentized residuals across subsets
+  ## CV to obtain normalized residuals across subsets
   test_point = test_lower = test_upper = rep(list(NULL), 60000)
   for (k in 1:5) {
     #### Training data
@@ -51,7 +51,7 @@ for (i in 1:5) {
     
     cat("done.","\n")
     
-    #### Studentized Residuals on Calibration data
+    #### Normalized Residuals on Calibration data
     calib.pheno = fread(paste0(path0,"/training_test_HDL_covar/training_",i,"/training_pheno_subset_",k,".txt"), header = T)
     calib.covar = fread(paste0(path0,"/training_test_HDL_covar/training_",i,"/training_covar_subset_",k,".txt"), header = T)
     calib.pgs = fread(paste0(path0,"/PGS_CV/training/PGS_training_",i,"_subset_",k,".profile"), header = T)
@@ -111,9 +111,9 @@ for (i in 1:5) {
   }
   
   ## output prediction intervals
-  test.pheno$cvsr_point = point
-  test.pheno$cvsr_lower = lower_bound
-  test.pheno$cvsr_upper = upper_bound
+  test.pheno$point = point
+  test.pheno$lower = lower_bound
+  test.pheno$upper = upper_bound
   
   test.pheno$SEX = test.data$SEX
   test.pheno$AGE = test.data$AGE

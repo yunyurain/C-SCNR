@@ -45,7 +45,7 @@ for (rep in 1:20) {
   ## cluster_multiplier = c(0.5, 1.0, 2.0, 0.5, 1.0, 2.0)
   ## Scenario 3
   ## Base_Group = c("S0A1P1", "S0A1P2", "S0A2P1", "S0A2P2","S1A1P1", "S1A1P2", "S1A2P1", "S1A2P2"),
-  ## cluster_multiplier = c(0.5, 1.0, 1.0, 2.0,0.5, 1.0, 1.0, 2.0)
+  ## cluster_multiplier = c(0.5, 1.0, 1.0, 2.0, 0.5, 1.0, 1.0, 2.0)
   
   scaled_covar <- scaled_covar %>%
     left_join(group_effect_map, by = "Base_Group")

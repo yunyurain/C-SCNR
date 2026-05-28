@@ -19,3 +19,7 @@ This repository contains the codes for the methods, simulation studies, and real
     ├── proposed_methods
     └── PGS_scripts
 
+## Tutorial
+The following instruction walks you through a pipeline to construct conformal prediction intervals with **C-SCNR**, in assistance of the codes in this repository.
+
+

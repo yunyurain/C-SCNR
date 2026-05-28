@@ -20,7 +20,7 @@ for (h2 in c(0.5)) {
           model = lm(pheno ~ PGS, data=subset.data)
           subset.pheno$predicted_PHENO = as.numeric(model$fitted.values)
           
-          ## calculate Residual_CV
+          ## Calculate Residual_CV
           subset.pheno$residual_CV = abs(subset.pheno$PHENO-subset.pheno$predicted_PHENO)
           
           write.table(subset.pheno, paste0("predicted/PredInterval/","h2_", h2, "_poly_", causal, "_rep_", rep, "_subset_", k, ".txt"),

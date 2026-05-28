@@ -21,6 +21,6 @@ This repository contains the codes for the methods, simulation studies, and real
 ```
 
 ## Tutorial
-The following instruction walks you through a pipeline to construct conformal prediction intervals with **C-SCNR**, in assistance of the codes in this repository.
+The following instruction walks you through the pipeline to construct conformal prediction intervals with **C-SCNR**, in assistance of the codes in this repository.
 
 

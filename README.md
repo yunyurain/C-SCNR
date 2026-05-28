@@ -25,6 +25,12 @@ The following instruction walks you through the pipeline to construct conformal 
 
 ### Step 1. Data Preparation
 
-### Step 2.
+### Step 2. PGS Computation
+
+### Step 3. Training
+
+### Step 4. Calibration
+
+### Step 5. Prediction
 
 

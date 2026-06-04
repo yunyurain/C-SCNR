@@ -31,14 +31,18 @@ The following instruction walks you through the pipeline to construct conformal 
 ### Step 1. Data Preparation
 The individual-level data should include genotype, phenotype (quantitative traits), and other covariates (e.g. Sex, Age, top PCs). <br>
 
-First of all, a reference panel need be selected (e.g. 500, 1,000 individuals). It is later used for obtaining the LD information. <br>
+First of all, a reference panel need be selected (e.g. 500 or 1,000 individuals). It is later used for obtaining the LD information. <br>
 
 The next step is to partition the individual-level data (excluding the reference panel) into two parts: the proper training set $D_1$ and the calibration set $D_2$. In our study, we followed the typical machine learning 80-20 split, allocating 20% of the data for calibration.  
 
 ### Step 2. PGS Computation
 The proper training set is used to train the PGS weights. <br>
 
-First, the GWAS summary statistics is calculated using PLINK2. You may refer to the shell script [gwas.sh](real_data_applications/PGS_scripts/gwas.sh)  
+First, the GWAS summary statistics is calculated using PLINK2. Please refer to the shell script [gwas.sh](real_data_applications/PGS_scripts/gwas.sh) for sample implementation. <br>
+
+Next, the PGS weights are estimated via lassosum. Please refer to the R script [lassosum_CV.R](real_data_applications/PGS_scripts/lassosum_CV.R) for sample implementation. <br>
+
+
 
 ### Step 3. Training
 

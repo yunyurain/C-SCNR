@@ -28,6 +28,13 @@ This repository contains the codes for the methods, simulation studies, and real
 ## Tutorial
 The following instruction walks you through the pipeline to construct conformal prediction intervals with **C-SCNR**, in assistance of the codes in this repository.
 
+### Softwares
+```text
+PLINK (v1.9)
+PLINK (v2.0)
+R
+```
+
 ### Step 1. Data Preparation
 The individual-level data should include genotype, phenotype (quantitative traits), and other covariates (e.g. Sex, Age, top PCs). <br>
 

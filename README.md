@@ -51,7 +51,7 @@ First of all, a reference panel need be selected (e.g. 500 or 1,000 individuals)
 
 The next step is to partition the individual-level data (excluding the reference panel) into two parts: the proper training set $D_1$ and the calibration set $D_2$. In our study, we followed the typical machine learning 80-20 split, allocating 20% of the data for calibration.
 
-The target set is another set of individuals with individual-level genotype and covariates data. (The true phenotypic values of the target set is unknown by assumption. However, in our study, the phenotype data is known for calculating the evaluation metrics (e.g. coverage rate).)
+The target set is another set of individuals with individual-level genotype and covariates data. (The true phenotypic values of the target set is unknown by assumption. However, in our study, the phenotype data is known for calculating the evaluation metrics, e.g. coverage rate.)
 
 ### Step 2. PGS Computation
 The proper training set is used to train the PGS weights. <br>

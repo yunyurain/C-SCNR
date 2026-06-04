@@ -47,20 +47,20 @@ NbClust
 ### Step 1. Data Preparation
 The individual-level data should include genotype, phenotype (quantitative traits), and other covariates (e.g. Sex, Age, top PCs). <br>
 
-First of all, a reference panel need be selected (e.g. 500 or 1,000 individuals). It is later used for obtaining the LD information. <br>
+First of all, a **reference panel** need be selected (e.g. 500 or 1,000 individuals). It is later used for obtaining the LD information. <br>
 
-The next step is to partition the individual-level data (excluding the reference panel) into two parts: the proper training set $D_1$ and the calibration set $D_2$. In our study, we followed the typical machine learning 80-20 split, allocating 20% of the data for calibration.
+The next step is to partition the individual-level data (excluding the reference panel) into two parts: the **proper training set** $D_1$ and the **calibration set** $D_2$. In our study, we followed the typical machine learning 80-20 split, allocating 20% of the data for calibration.
 
-The target set $D_{test}$ is another set of individuals with individual-level genotype and covariates data. (The true phenotypic values of the target set is unknown by assumption. However, in our study, the phenotype data is known for calculating the evaluation metrics, e.g. coverage rate.)
+The **target set** $D_{test}$ is another set of individuals with individual-level genotype and covariates data. (The true phenotypic values of the target set is unknown by assumption. However, in our study, the phenotype data is known for calculating the evaluation metrics, e.g. coverage rate.)
 
 ### Step 2. PGS Computation
 The proper training set is used to train the PGS weights. <br>
 
-First, the GWAS summary statistics is calculated using PLINK2. Please refer to the shell script [gwas.sh](real_data_applications/PGS_scripts/gwas.sh) for sample implementation. <br>
+First, the **GWAS summary statistics** is calculated using *PLINK2*. Please refer to the shell script [gwas.sh](real_data_applications/PGS_scripts/gwas.sh) for sample implementation. <br>
 
-Next, the PGS weights are estimated via lassosum. Please refer to the R scripts [sumstats_format.R](real_data_applications/PGS_scripts/sumstats_format.R) and [lassosum_CV.R](real_data_applications/PGS_scripts/lassosum_CV.R) for sample implementation. <br>
+Next, the **PGS weights** are estimated via *lassosum*. Please refer to the R scripts [sumstats_format.R](real_data_applications/PGS_scripts/sumstats_format.R) and [lassosum_CV.R](real_data_applications/PGS_scripts/lassosum_CV.R) for sample implementation. <br>
 
-The PGSs for all individuals in $D_1$, $D_2$, and the target set $D_{test}$ are computed using the obtained weights. Please refer to the shell scripts [pgs_CV_training_test.sh](real_data_applications/PGS_scripts/pgs_CV_training_test.sh) and [pgs_Split_Conformal_training_test.sh](real_data_applications/PGS_scripts/pgs_Split_Conformal_training_test.sh).
+The PGSs for all individuals in $D_1$, $D_2$, and the target set $D_{test}$ are computed using the obtained weights, which can be done using *PLINK1.9* or *PLINK2*. Please refer to the shell scripts [pgs_CV_training_test.sh](real_data_applications/PGS_scripts/pgs_CV_training_test.sh) and [pgs_Split_Conformal_training_test.sh](real_data_applications/PGS_scripts/pgs_Split_Conformal_training_test.sh).
 
 ### Step 3. Training
 

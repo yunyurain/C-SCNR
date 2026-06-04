@@ -20,6 +20,7 @@ This repository contains the codes for the methods, simulation studies, and real
     └── PGS_scripts
 ```
 
+## Overview of C-SCNR
 <p align="center">
   <img src="C-SCNR_pipeline.jpg" width="90%" alt="The schematic workflow of C-SCNR">
 </p>

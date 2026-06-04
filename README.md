@@ -30,9 +30,9 @@ The following instruction walks you through the pipeline to construct conformal 
 
 ### Softwares
 ```text
-PLINK (v1.9) https://www.cog-genomics.org/plink/.
-PLINK (v2.0) https://www.cog-genomics.org/plink/2.0/.
-R            https://www.r-project.org/.
+PLINK (v1.9) https://www.cog-genomics.org/plink/
+PLINK (v2.0) https://www.cog-genomics.org/plink/2.0/
+R            https://www.r-project.org/
 ```
 
 ### R packages

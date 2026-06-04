@@ -58,7 +58,7 @@ First, the GWAS summary statistics is calculated using PLINK2. Please refer to t
 
 Next, the PGS weights are estimated via lassosum. Please refer to the R script [lassosum_CV.R](real_data_applications/PGS_scripts/lassosum_CV.R) for sample implementation. <br>
 
-
+The PGSs for all individuals in $D_1$, $D_2$, and the target set $D_{/text{test}}$
 
 ### Step 3. Training
 

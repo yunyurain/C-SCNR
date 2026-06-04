@@ -35,6 +35,15 @@ PLINK (v2.0)
 R
 ```
 
+### R packages
+```text
+lassosum
+parallel
+data.table
+tidyverse
+NbClust
+```
+
 ### Step 1. Data Preparation
 The individual-level data should include genotype, phenotype (quantitative traits), and other covariates (e.g. Sex, Age, top PCs). <br>
 

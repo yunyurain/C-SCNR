@@ -56,9 +56,9 @@ The proper training set is used to train the PGS weights. <br>
 
 First, the GWAS summary statistics is calculated using PLINK2. Please refer to the shell script [gwas.sh](real_data_applications/PGS_scripts/gwas.sh) for sample implementation. <br>
 
-Next, the PGS weights are estimated via lassosum. Please refer to the R script [lassosum_CV.R](real_data_applications/PGS_scripts/lassosum_CV.R) for sample implementation. <br>
+Next, the PGS weights are estimated via lassosum. Please refer to the R scripts [sumstats_format.R](real_data_applications/PGS_scripts/sumstats_format.R) and [lassosum_CV.R](real_data_applications/PGS_scripts/lassosum_CV.R) for sample implementation. <br>
 
-The PGSs for all individuals in $D_1$, $D_2$, and the target set $D_{/text{test}}$
+The PGSs for all individuals in $D_1$, $D_2$, and the target set $D_{test}$ are computed using the obtained weights. Please refer to the shell scripts [pgs_CV_training_test.sh](real_data_applications/PGS_scripts/pgs_CV_training_test.sh) and [pgs_Split_Conformal_training_test.sh](real_data_applications/PGS_scripts/pgs_Split_Conformal_training_test.sh).
 
 ### Step 3. Training
 

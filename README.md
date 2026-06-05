@@ -60,9 +60,9 @@ First, the **GWAS summary statistics** is calculated using ***PLINK2***. Please 
 
 Next, the **PGS weights** are estimated via ***lassosum***. Please refer to the R scripts [sumstats_format.R](real_data_applications/PGS_scripts/sumstats_format.R) and [lassosum_CV.R](real_data_applications/PGS_scripts/lassosum_CV.R) for sample implementation. <br>
 
-The PGSs for all individuals in $D_1$, $D_2$, and the target set $D_{test}$ are computed using the obtained weights, which can be done using ***PLINK1.9*** or ***PLINK2***. Please refer to the shell scripts [pgs_CV_training_test.sh](real_data_applications/PGS_scripts/pgs_CV_training_test.sh) and [pgs_Split_Conformal_training_test.sh](real_data_applications/PGS_scripts/pgs_Split_Conformal_training_test.sh).
+The PGSs for all individuals in $D_1$, $D_2$, and the target set $D_{test}$ are computed using the obtained weights, which can be done using ***PLINK1.9*** or ***PLINK2***. Please refer to the shell scripts [pgs_CV_training_test.sh](real_data_applications/PGS_scripts/pgs_CV_training_test.sh) and [pgs_Split_Conformal_training_test.sh](real_data_applications/PGS_scripts/pgs_Split_Conformal_training_test.sh). The computed PGSs corresponds to the *SCORESUM* column in *.profile* score file for ***PLINK1.9*** and the *SCORE1_SUM* column in *.sscore* score file for ***PLINK2***.
 
-### Step 3. Training, Calibration & Prediction
+### Step 3. C-SCNR
 Now, we have prepared all the necessary individual-level data to perform **C-SCNR** for prediction interval construction. Basically, **C-SCNR** contains five sections: Input, Training, Calibration, Prediction, and Output. Please refer to [C-SCNR.R](real_data_applications/proposed_methods/C-SCNR.R). <br>
 
 #### Input
@@ -80,9 +80,10 @@ get_base_groups <- function(df) {
     )
 }
 ```
-This sample demonstrates the 2*6 Interaction (Sex $\times$ Age) implemented in our study. Indeed, the base group specification can be based on more covariates and alternative discretization of a certain covariate (e.g. Age). Please refer to [simulate_quantitative_phenotype_with_covariates_stratified.R](simulations/simulation_study_IV/simulate_quantitative_phenotype_with_covariates_stratified.R) for altervative specifications (## Scenario 1,2,3). 
+This sample demonstrates the 2*6 Interaction (Sex $\times$ Age) implemented in our study. Indeed, the base group specification can be based on more covariates and alternative discretization of a certain covariate (e.g. Age). Please refer to [simulate_quantitative_phenotype_with_covariates_stratified.R](simulations/simulation_study_IV/simulate_quantitative_phenotype_with_covariates_stratified.R) for altervative specifications (## Scenario 1,2,3). <br>
 
-
+#### Training, Calibration & Prediction
+The main part of **C-SCNR** goes through fitting the 
 
 ## References
 Xu, C., Ganesh, S. K., & Zhou, X. (2025). Statistical construction of calibrated prediction intervals for polygenic score-based phenotype prediction. Nature genetics, 57(11), 2891–2900. https://doi.org/10.1038/s41588-025-02360-6.

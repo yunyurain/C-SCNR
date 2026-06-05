@@ -97,3 +97,6 @@ Note that SCNR follows the same workflow of C-SCNR, but excludes the `split-and-
 Xu, C., Ganesh, S. K., & Zhou, X. (2025). Statistical construction of calibrated prediction intervals for polygenic score-based phenotype prediction. Nature genetics, 57(11), 2891–2900. https://doi.org/10.1038/s41588-025-02360-6.
 
 Hou, K., Xu, Z., Ding, Y., Mandla, R., Shi, Z., Boulier, K., Harpak, A., & Pasaniuc, B. (2024). Calibrated prediction intervals for polygenic scores across diverse contexts. Nature genetics, 56(7), 1386–1396. https://doi.org/10.1038/s41588-024-01792-w.
+
+## Contact
+For any questions on **C-SCNR**, please contact u3563750@connect.hku.hk.

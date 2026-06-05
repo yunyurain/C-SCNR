@@ -62,11 +62,26 @@ Next, the **PGS weights** are estimated via ***lassosum***. Please refer to the 
 
 The PGSs for all individuals in $D_1$, $D_2$, and the target set $D_{test}$ are computed using the obtained weights, which can be done using ***PLINK1.9*** or ***PLINK2***. Please refer to the shell scripts [pgs_CV_training_test.sh](real_data_applications/PGS_scripts/pgs_CV_training_test.sh) and [pgs_Split_Conformal_training_test.sh](real_data_applications/PGS_scripts/pgs_Split_Conformal_training_test.sh).
 
-### Step 3. Training
+### Step 3. Training, Calibration & Prediction
+Now, we have prepared all the necessary individual-level data to perform **C-SCNR** for prediction interval construction. Basically, **C-SCNR** contains five sections: Input, Training, Calibration, Prediction, and Output. Please refer to [C-SCNR.R](real_data_applications/proposed_methods/C-SCNR.R). <br>
 
-### Step 4. Calibration
+#### Input
+Apart from the prepared individual-level data, a special feature of **C-SCNR** is allowing the user to specify the base groups given the available covariates. <br>
+```text
+## 2*6 Interaction (Sex*Age) implemented in the study
+get_base_groups <- function(df) {
+  df %>%
+    mutate(
+      AGE_Group = cut(AGE, 
+                      breaks = c(-Inf, 45, 50, 55, 60, 65, Inf),
+                      labels = c(1:6),
+                      right = FALSE),
+      Base_Group = paste0("S", SEX, "A", AGE_Group)
+    )
+}
+```
+This sample demonstrates the 2*6 Interaction (Sex $\times$ Age) implemented in our study. Indeed, the base group specification can be based on more covariates and alternative discretization of a certain covariate (e.g. Age). Please refer to [simulate_quantitative_phenotype_with_covariates_stratified.R](simulations/simulation_study_IV/simulate_quantitative_phenotype_with_covariates_stratified.R) for altervative specifications. 
 
-### Step 5. Prediction
 
 
 ## References

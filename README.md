@@ -99,4 +99,4 @@ Xu, C., Ganesh, S. K., & Zhou, X. (2025). Statistical construction of calibrated
 Hou, K., Xu, Z., Ding, Y., Mandla, R., Shi, Z., Boulier, K., Harpak, A., & Pasaniuc, B. (2024). Calibrated prediction intervals for polygenic scores across diverse contexts. Nature genetics, 56(7), 1386–1396. https://doi.org/10.1038/s41588-024-01792-w.
 
 ## Contact
-For any questions on **C-SCNR**, please contact u3563750@connect.hku.hk.
+For any questions on **C-SCNR**, please contact Yu Yun (Rain) via u3563750@connect.hku.hk.

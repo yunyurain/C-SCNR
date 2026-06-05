@@ -82,8 +82,10 @@ get_base_groups <- function(df) {
 ```
 This sample demonstrates the 2*6 Interaction (Sex $\times$ Age) implemented in our study. Indeed, the base group specification can be based on more covariates and alternative discretization of a certain covariate (e.g. Age). Please refer to [simulate_quantitative_phenotype_with_covariates_stratified.R](simulations/simulation_study_IV/simulate_quantitative_phenotype_with_covariates_stratified.R) for altervative specifications (## Scenario 1,2,3). <br>
 
+Moreover, the user needs to specify the target miscoverage level $\alpha$ (confidence level $1-\alpha$) and the number of `split-and-cluster` iterations $L$.
+
 #### Training, Calibration & Prediction
-The main part of **C-SCNR** goes through fitting the 
+The main part of **C-SCNR** goes through training, calibration, and prediction. Training involves fitting the conditional mean and variance model on $D_1$. With the fitted models, the residual normalization is done on $D_2$. 
 
 ## References
 Xu, C., Ganesh, S. K., & Zhou, X. (2025). Statistical construction of calibrated prediction intervals for polygenic score-based phenotype prediction. Nature genetics, 57(11), 2891–2900. https://doi.org/10.1038/s41588-025-02360-6.

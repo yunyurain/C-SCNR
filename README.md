@@ -90,6 +90,9 @@ The main part of **C-SCNR** goes through training, calibration, and prediction. 
 #### Output
 For this initial version, each replicate of `split-and-cluster` outputs a file containing all prediction intervals and another file containing the corresponding cluster-specific quantiles. To obtain the ensemble prediction intervals, one needs to aggregate the intervals of the replicates by taking average. Please refer to [ensemble_coverage_width.R](real_data_applications/proposed_methods/ensemble_coverage_width.R) for obtaining the ensemble intervals. (Future updates will focus on obtaining the ensemble quantiles first and constructing the prediction intervals accordingly once.)
 
+#### SCNR
+Note that SCNR follows the same workflow of C-SCNR, but excludes the `split-and-cluster` module. Please refer to [SCNR.R](real_data_applications/proposed_methods/SCNR.R).
+
 ## References
 Xu, C., Ganesh, S. K., & Zhou, X. (2025). Statistical construction of calibrated prediction intervals for polygenic score-based phenotype prediction. Nature genetics, 57(11), 2891–2900. https://doi.org/10.1038/s41588-025-02360-6.
 

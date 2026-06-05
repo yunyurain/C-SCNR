@@ -87,7 +87,8 @@ Moreover, the user needs to specify the target miscoverage level $\alpha$ (confi
 #### Training, Calibration & Prediction
 The main part of **C-SCNR** goes through training, calibration, and prediction. Training involves fitting the conditional mean and variance model on $D_1$. With the fitted models, the residual normalization is done on $D_2$. The `split-and-cluster` procedure is repeated for $L$ iterations. Finally, the prediction intervals for the target set $D_{test}$ are constructed by integrating the fitted models and the ensemble quantiles. 
 
-
+#### Output
+For this initial version, each replicate of `split-and-cluster` outputs a file containing all prediction intervals and another file containing the corresponding cluster-specific quantiles. To obtain the ensemble prediction intervals, one needs to aggregate the intervals of the replicates by taking average. Please refer to [ensemble_coverage_width.R](real_data_applications/proposed_methods/ensemble_coverage_width.R) for obtaining the ensemble intervals. (Future updates will focus on obtaining the ensemble quantiles first and constructing the prediction intervals accordingly once.)
 
 ## References
 Xu, C., Ganesh, S. K., & Zhou, X. (2025). Statistical construction of calibrated prediction intervals for polygenic score-based phenotype prediction. Nature genetics, 57(11), 2891–2900. https://doi.org/10.1038/s41588-025-02360-6.
